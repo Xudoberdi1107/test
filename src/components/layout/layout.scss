@@ -1,0 +1,13 @@
+main{
+  width: 100%;
+  height: calc(100vh - 75px);
+  overflow-y: scroll;
+}
+.my-container{
+  display: block;
+}
+@media (max-width: 991px) {
+  .my-container{
+    display: flex;
+  }
+}
