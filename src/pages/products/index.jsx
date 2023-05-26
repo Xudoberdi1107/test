@@ -5,7 +5,7 @@ const Products = () => {
     return (
         <div>
             Products
-            hello
+            hello hi
         </div>
     );
 };
