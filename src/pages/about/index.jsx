@@ -7,7 +7,7 @@ import { instance } from '../../utils/axios';
 import { toast } from 'toastr';
 import { useQuery } from 'react-query';
 import { useForm } from 'react-hook-form';
-import TitleForPages from '../../components/title_for_pages/title_for_pages';
+import TitleForPages from '../../components';
 
 const About = () => {
     async function footerLink() {
