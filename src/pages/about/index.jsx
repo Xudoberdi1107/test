@@ -6,6 +6,7 @@ import Footer from '../../components/footer/footer';
 import { instance } from '../../utils/axios';
 import { useQuery } from 'react-query';
 import { useRef } from 'react';
+import { useForm } from 'react-hook-form';
 const About = () => {
     async function footerLink() {
         const res = await instance.get(`/information`)
@@ -13,22 +14,10 @@ const About = () => {
     }
     const { data, isLoading } = useQuery("information",footerLink)
 
-    const messageRef = useRef()
-    const phoneRef = useRef()
-    const subjectRef = useRef()
-    async function Message(){
-        console.log("hi");
-        const article = { 
-            phone:phoneRef.current.value,
-            subject:subjectRef.current.value,
-            message:messageRef.current.value,
-            status: "PENDING"
-        };
-        
-        instance.post('/message', { article })
-        
-                
-    }
+    const { register, handleSubmit, formState: { errors }} = useForm();
+    const onSubmit = datad =>  instance.post("/message", datad)  
+
+    // console.log(errors , "e" );
 
     return (
         <div className={a.section_about}>
@@ -46,24 +35,13 @@ const About = () => {
             <div className={a.section_about_information_map}>
             {parse(`<iframe src="${data?.data.data[0].addressMap}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`)}
             </div>
+ 
             <div className={a.section_about_information_message}>
-                <form >
-                    <ul>
-                        <li>
-                            <label htmlFor="phoneRef">phone</label>
-                            <input type="number" name="" id="phoneRef" ref={phoneRef}/>
-                        </li>
-                        <li>
-                            <label htmlFor="subjectRef">subject</label>
-                            <input type="text" ref={subjectRef} id="subjectRef"/>
-                        </li>
-                        <li>
-                            <label htmlFor="messageRef">message</label>
-                            <textarea name="" id="messageRef" cols="30" rows="5" ref={messageRef} ></textarea>
-                        </li>
-                    </ul>
-                    <input className='btn' type="submit" />
-                    
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input type="tel" placeholder="phone" {...register("phone", {})} />
+                    <input type="text" placeholder="subject" {...register("subject", {})} />
+                    <textarea name="" id="" cols="30" rows="10" placeholder="message" {...register("message", {})}></textarea>
+                    <input type="submit" />
                 </form>
 
             </div>

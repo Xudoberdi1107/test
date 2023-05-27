@@ -11,7 +11,7 @@ const Footer = () => {
         return res;
     }
     const { data, isLoading } = useQuery("information",footerLink)
-    console.log(data?.data.data[0],"l");
+    // console.log(data?.data.data[0],"l");
     if (Array.isArray(data?.data.data)) {
         return (
             <footer>

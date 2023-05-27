@@ -7,6 +7,10 @@ main{
   display: block;
 }
 @media (max-width: 991px) {
+  main{
+    
+    height: 100vh;
+  }
   .my-container{
     display: flex;
   }
