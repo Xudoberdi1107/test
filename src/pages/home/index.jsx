@@ -1,8 +1,8 @@
 import React from 'react';
-
+import home from "./style.module.scss"
 const Home = () => {
     return (
-        <div>
+        <div className={home.home_page}>
             Home
         </div>
     );

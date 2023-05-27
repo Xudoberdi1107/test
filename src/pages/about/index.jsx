@@ -1,13 +1,13 @@
 import React from 'react';
 import a from "./style.module.scss"
 import parse from 'html-react-parser';
-import {Loader} from "../../components";
+import {Loader, TitleForPages} from "../../components";
 import Footer from '../../components/footer/footer';
 import { instance } from '../../utils/axios';
 import { toast } from 'toastr';
 import { useQuery } from 'react-query';
 import { useForm } from 'react-hook-form';
-import TitleForPages from '../../components';
+
 
 const About = () => {
     async function footerLink() {
