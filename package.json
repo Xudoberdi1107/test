@@ -19,6 +19,7 @@
     "react-query": "^3.39.3",
     "react-scripts": "5.0.1",
     "sass": "^1.62.1",
+    "toastr": "^2.1.4",
     "useref": "^1.4.4",
     "web-vitals": "^2.1.4"
   },

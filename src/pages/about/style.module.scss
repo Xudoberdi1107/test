@@ -14,7 +14,7 @@
      align-items: center;
      justify-content: center;
      gap: 20px;
-     padding: 50px 5%;
+     padding: 5px 5%;
 }
 .section_about_information_img{
     width: 35%;
@@ -27,18 +27,50 @@
 .section_about_information_text{
     width: 45%;
 }
-.section_about_information_map{
+.section_about_information_our_address{
     background-color: #f8f8f8ce;
     width: 100%;
-    padding: 10px 5%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    .section_about_information_our_address_map{
+        width: 45%;
+    }
+    .section_about_information_our_address_contact{
+        width: 45%;
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            li{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 4px;
+                width: 100%;
+                border-bottom:1px solid #616467 ;
+                padding: 10px 5px 2px;
+                h5{
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
 }
 .section_about_information_message{
     width: 100%;
     // background-color: red;
-    padding: 10px 5%;
+    padding: 10px 0%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     gap: 10px;
     form{
         width: 40%;
@@ -51,10 +83,20 @@
         gap: 10px;
         input{
             outline: none;
-            border: 2px solid white;
+            border: none;
+            border-bottom: 2px solid white;
             color: white;
             background-color: transparent;
             width: 100%;
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.752);
+              }
+              
+            
+        }
+        input[type=submit]{
+            border: 2px solid white;
+
         }
         textarea{
             outline: none;
@@ -64,6 +106,9 @@
             color: white;
             background-color: transparent;  
             padding: 2px;
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.752);
+              }
 
         }
     }
@@ -86,13 +131,23 @@
             width: 80%;
         }
     }
+    .section_about_information_our_address{
+        
+        .section_about_information_our_address_map{
+            width: 90%;
+        }
+        .section_about_information_our_address_contact{
+            width: 90%;
+            
+        }
+    }
 }
 @media (max-width:568px) {
 
   
     .section_about_information_message{
         form{
-            width: 100%;
+            width: 90%;
         }
     }
 }
