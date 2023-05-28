@@ -55,8 +55,11 @@ const Sidebar = () => {
             </div>
             <div className="d-flex align-items-center gap-2">
             <div className={body.cart}>
-                <AiOutlineShoppingCart/>
-                <span>1</span>
+                <NavLink to={"/korzinka"} >
+
+                    <AiOutlineShoppingCart/>
+                    <span>1</span>
+                </NavLink>
             </div>
 
             </div>
