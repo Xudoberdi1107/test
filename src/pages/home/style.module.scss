@@ -6,5 +6,256 @@
     justify-content: center;
     gap: 20px;
     height: 100%;
-    background-color: red;
+}
+.home_page_showcase{
+    width: 100%;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 5% 20px;
+    .home_page_showcase_title{
+        width: 45%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        color: #393D45;
+        h2{
+            font-weight: 900;
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+        a{
+            background: #211F1C;
+            padding: 5px;
+            color: white;
+            font-size: 1rem;
+        }
+    }
+    .home_page_showcase_img{
+        width: 45%;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.home_page_Our_Partners{
+    width: 100%;
+    background-color: #F8F8F8;
+
+    padding: 20px 5% 20px;
+
+    .home_page_Our_Partners_img{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        img{
+            width: 10%;
+        }
+    }
+}
+
+.home_page_Some_Products{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 5% 20px;
+    .home_page_Some_Products_kards{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        .home_page_Some_Products_kard{
+            width: 20%;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+            .home_page_Some_Products_button{
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                gap: 10px;
+                padding: 5px;
+                a{
+                    background: #393D45;
+                    border-radius: 10px;
+                    padding: 4px 10px;
+                    color: white;
+                    font-size: 1rem;
+                }
+                button{
+                    border: none;
+                    background-color: transparent;
+                    color: #616467;
+                    background: #FFFFFF;
+                    border-radius: 10px;
+                    padding: 4px 6px;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+    }
+}
+
+.home_page_Benefits_Using_Our_Service{
+    width: 100%;
+    background-color: #F8F8F8;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 5% 20px;
+    .home_page_Benefits_Using_Our_Service_kards{
+        width: 100%;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 20px;
+        .home_page_Benefits_Using_Our_Service_kard{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            img{
+                width: 20%;
+            }
+        }
+    }
+}
+
+.home_page_What_Our_Costumers_Are_Saying{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 5% 20px;
+    .home_page_What_Our_Costumers_Are_Saying_img{
+        width: 20%;
+        img{
+            width: 100%;
+        }
+    }
+    .home_page_What_Our_Costumers_Are_Saying_text{
+        width: 60%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        color: #393D45;
+        h5{
+            font-weight: 600;
+            font-size: 1.6rem;
+
+        }
+        p{
+            font-size: 1rem;
+        }
+        span{
+
+            h6{
+                font-weight: 600;
+                font-size: 1.2rem;
+            }
+            p{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width:1000px) {
+    .home_page_Some_Products{
+
+        .home_page_Some_Products_kards{
+            .home_page_Some_Products_kard{
+
+                width: 30%;
+            }
+        }
+    }
+}
+
+
+@media (max-width:600px) {
+    .home_page_showcase{
+        .home_page_showcase_title{
+            width: 100%;
+        }
+        .home_page_showcase_img{
+            width: 100%;
+        }
+    }
+    .home_page_Our_Partners{
+        .home_page_Our_Partners_img{
+            img{
+                width: 20%;
+            }
+        }
+    }
+    .home_page_Some_Products{
+
+        .home_page_Some_Products_kards{
+            .home_page_Some_Products_kard{
+
+                width: 45%;
+            }
+        }
+    }
+    .home_page_Benefits_Using_Our_Service{
+        .home_page_Benefits_Using_Our_Service_kards{
+            flex-wrap: wrap;
+            .home_page_Benefits_Using_Our_Service_kard{
+                width: 45%;
+            }
+
+        }
+    }
+   
+    
+}
+@media (max-width:400px) {
+    
+    .home_page_What_Our_Costumers_Are_Saying{
+        .home_page_What_Our_Costumers_Are_Saying_img{
+            width: 45%;
+        }
+        .home_page_What_Our_Costumers_Are_Saying_text{
+            width: 100%;
+        }
+    }
+    
 }

@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import body from './header.module.scss'
 import {NavLink} from "react-router-dom";
-import { FaBars, FaHome} from "react-icons/fa";
-import {FaOpencart} from "react-icons/fa"
+import { FaBars, FaHome,FaOpencart} from "react-icons/fa";
 import {FcAbout} from "react-icons/fc"
 import {AiOutlineShoppingCart} from "react-icons/ai"
 import {MultpleSelect} from "../index";

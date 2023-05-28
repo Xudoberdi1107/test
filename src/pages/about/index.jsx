@@ -1,7 +1,7 @@
 import React from 'react';
 import a from "./style.module.scss"
 import parse from 'html-react-parser';
-import {Loader, TitleForPages} from "../../components";
+import {Loader, TitleForPages , TitleForCenter} from "../../components";
 import Footer from '../../components/footer/footer';
 import { instance } from '../../utils/axios';
 import { toast } from 'toastr';
@@ -15,7 +15,6 @@ const About = () => {
         return res;
     }
     const { data, isLoading } = useQuery("information",footerLink)
-    console.log(data , "data");
     const { register, handleSubmit, formState: { errors },clearErrors } = useForm();
     const onSubmit = datad => instance.post("/message", datad) 
    if (isLoading) {
@@ -36,7 +35,7 @@ const About = () => {
 
             </div>
             <div className={a.section_about_information_our_address}>
-            <TitleForPages title={"Address"}/>  
+            <TitleForCenter title={"Address"}/>  
                 <div className={a.section_about_information_our_address_map}>
                 {parse(`<iframe src="${data?.data.data[0].addressMap}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`)}
                 </div>
@@ -54,7 +53,7 @@ const About = () => {
             </div>
  
             <div className={a.section_about_information_message}>
-                <TitleForPages title={"Message"}/>    
+                <TitleForCenter title={"Message"}/>    
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input type="tel" placeholder="phone" {...register("phone", {})} />
                     <input type="text" placeholder="subject" {...register("subject", {})} />

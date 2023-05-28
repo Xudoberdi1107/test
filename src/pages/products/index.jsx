@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
-
+import { TitleForPages } from '../../components';
 
 const Products = () => {
     return (
         <div>
-            Products
-            hello hi
+            <TitleForPages title={"Product"}/>
         </div>
     );
 };
