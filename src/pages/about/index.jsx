@@ -4,19 +4,30 @@ import parse from 'html-react-parser';
 import {Loader, TitleForPages , TitleForCenter} from "../../components";
 import Footer from '../../components/footer/footer';
 import { instance } from '../../utils/axios';
-import { toast } from 'toastr';
-import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
+import { useQuery, useMutation } from 'react-query';
 import { useForm } from 'react-hook-form';
-
-
+console.log(toast);
 const About = () => {
     async function footerLink() {
         const res = await instance.get(`/information`)
         return res;
     }
     const { data, isLoading } = useQuery("information",footerLink)
-    const { register, handleSubmit, formState: { errors },clearErrors } = useForm();
-    const onSubmit = datad => instance.post("/message", datad) 
+
+
+
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const mutation = useMutation((datad)=> instance.post("/message", datad));  
+    const auth = (value) => {
+        mutation.mutate(value, {
+            onSuccess: (success) => toast.success("Success message"),
+            onError: (Error) =>toast.error("Error message"),
+        })
+        console.log(value);
+    }
+
    if (isLoading) {
     return <Loader/>
    }else{
@@ -53,8 +64,9 @@ const About = () => {
             </div>
  
             <div className={a.section_about_information_message}>
-                <TitleForCenter title={"Message"}/>    
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <TitleForCenter title={"Message"}/>  
+
+                <form onSubmit={handleSubmit(auth)}>
                     <input type="tel" placeholder="phone" {...register("phone", {})} />
                     <input type="text" placeholder="subject" {...register("subject", {})} />
                     <textarea name="" id="" cols="30" rows="10" placeholder="message" {...register("message", {})}></textarea>
